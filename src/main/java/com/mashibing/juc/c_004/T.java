@@ -11,6 +11,7 @@ public class T {
 	private static int count = 10;
 	
 	public synchronized static void m() { //这里等同于synchronized(FineCoarseLock.class)
+		mm();
 		count--;
 		System.out.println(Thread.currentThread().getName() + " count = " + count);
 	}
@@ -18,7 +19,12 @@ public class T {
 	public static void mm() {
 		synchronized(T.class) { //考虑一下这里写synchronized(this)是否可以？
 			count --;
+			System.out.println(Thread.currentThread().getName() + " count = " + count);
 		}
 	}
 
+
+	public static void main(String[] args) {
+		new Thread(() -> T.m(), "t1").start();
+	}
 }

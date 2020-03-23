@@ -19,38 +19,51 @@ public class T {
 			System.out.println(Thread.currentThread().getName() + " count = " + count);
 			try {
 				TimeUnit.SECONDS.sleep(1);
-				
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
+
 			if(count == 5) {
 				int i = 1/0; //此处抛出异常，锁将被释放，要想不被释放，可以在这里进行catch，然后让循环继续
 				System.out.println(i);
 			}
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		T t = new T();
-		Runnable r = new Runnable() {
+		new Thread(t::m, "t1").start();
 
-			@Override
-			public void run() {
-				t.m();
-			}
-			
-		};
-		new Thread(r, "t1").start();
-		
 		try {
 			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		new Thread(r, "t2").start();
+
+		new Thread(t::m, "t2").start();
 	}
+
+
+//	public synchronized void m(){
+//		System.out.println(Thread.currentThread().getName()+" is requesting !!!");
+//		try {
+//			Thread.sleep(2000);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//			int i = 1 / 0;
+//		System.out.println(Thread.currentThread().getName()+" request end !!!");
+//	}
+//
+//	public static void main(String[] args) {
+//		T t = new T();
+//		new Thread(t::m, "t1").start();
+//		new Thread(t::m, "t2").start();
+////		for (int i = 0; i < 10; i++) {
+////			new Thread(t::m, "thread"+i).start();
+////		}
+//	}
 	
 }
 
