@@ -27,21 +27,21 @@ public class T02_ReentrantLock2Recording {
             lock.lock();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             lock.unlock();
             lock.unlock();
         }
     }
 
-    public void m2(){
-         try {
-             lock.lock();
-             System.out.println("m2...");
-         } catch (Exception e) {
-             e.printStackTrace();
-         }finally {
-             lock.unlock();
-         }
+    public void m2() {
+        try {
+            lock.lock();
+            System.out.println("m2...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
     }
 
     public static void main(String[] args) {

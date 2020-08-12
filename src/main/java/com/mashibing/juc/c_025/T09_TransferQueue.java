@@ -16,16 +16,16 @@ public class T09_TransferQueue {
 		
 		strs.transfer("aaa");
 		
-		//strs.put("aaa");
+		strs.put("aaa");
 
 
-		/*new Thread(() -> {
+		new Thread(() -> {
 			try {
 				System.out.println(strs.take());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}).start();*/
+		}).start();
 
 
 	}

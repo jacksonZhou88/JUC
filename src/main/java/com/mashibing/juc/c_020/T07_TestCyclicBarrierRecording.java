@@ -4,7 +4,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
-*<p>åŠŸèƒ½æè¿°ï¼šæ¯”countDownLatchæ›´æ–¹ä¾¿ï¼Œä¹Ÿæ˜¯ç›¸å½“äºä¸€ä¸ªæ …æ ï¼Œç­‰åˆ°æ•°é‡ç­‰äºå®¹é‡å€¼ï¼Œæ‰“å¼€æ …æ ï¼Œç¨‹åºæ‰§è¡Œ</p>
+*<p>¹¦ÄÜÃèÊö£º±ÈcountDownLatch¸ü·½±ã£¬Ò²ÊÇÏàµ±ÓÚÒ»¸öÕ¤À¸£¬µÈµ½ÊıÁ¿µÈÓÚÈİÁ¿Öµ£¬´ò¿ªÕ¤À¸£¬³ÌĞòÖ´ĞĞ</p>
 *<ul>
 *<li>@param </li>
 *<li>@return </li>
@@ -16,7 +16,7 @@ import java.util.concurrent.CyclicBarrier;
 public class T07_TestCyclicBarrierRecording {
 
     static CyclicBarrier barrier = new CyclicBarrier(20, ()->{
-        System.out.println("äººæ»¡å•¦ï¼Œå‡ºå‘ï¼");
+        System.out.println("ÈËÂúÀ²£¬³ö·¢£¡");
     });
 
     public static void main(String[] args) {

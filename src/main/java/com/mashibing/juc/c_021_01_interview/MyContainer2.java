@@ -11,7 +11,10 @@
  */
 package com.mashibing.juc.c_021_01_interview;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -62,6 +65,10 @@ public class MyContainer2<T> {
 	}
 	
 	public static void main(String[] args) {
+		Map map = new HashMap();
+		Collections.synchronizedMap(map);
+
+
 		MyContainer2<String> c = new MyContainer2<>();
 		//启动消费者线程
 		for(int i=0; i<10; i++) {

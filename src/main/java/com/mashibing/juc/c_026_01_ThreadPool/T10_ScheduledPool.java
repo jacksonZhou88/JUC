@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 public class T10_ScheduledPool {
 	public static void main(String[] args) {
 		ScheduledExecutorService service = Executors.newScheduledThreadPool(4);
-		service.scheduleAtFixedRate(()->{
-			try {
+				service.scheduleAtFixedRate(()->{
+					try {
 				TimeUnit.MILLISECONDS.sleep(new Random().nextInt(1000));
 			} catch (InterruptedException e) {
 				e.printStackTrace();

@@ -9,6 +9,7 @@ public class T03_TestSynchronizedHashMap {
 
     static Map<UUID, UUID> m = Collections.synchronizedMap(new HashMap<UUID, UUID>());
 
+    static Map<UUID, UUID> mm = Collections.synchronizedMap(new HashMap<>());
     static int count = Constants.COUNT;
     static UUID[] keys = new UUID[count];
     static UUID[] values = new UUID[count];

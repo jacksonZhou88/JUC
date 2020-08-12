@@ -18,7 +18,7 @@ public class MyContainer1<T> {
 	
 	
 	public synchronized void put(T t) {
-		while(lists.size() == MAX) { //想想为什么用while而不是用if？
+		while(count == MAX) { //想想为什么用while而不是用if？
 			try {
 				this.wait(); //effective java
 			} catch (InterruptedException e) {
@@ -64,7 +64,7 @@ public class MyContainer1<T> {
 		//启动生产者线程
 		for(int i=0; i<2; i++) {
 			new Thread(()->{
-				for(int j=0; j<25; j++) c.put(Thread.currentThread().getName() + " " + j);
+				for(int j=0; j<25; j++) c.put(Thread.currentThread().getName() + " adding " + j);
 			}, "p" + i).start();
 		}
 	}

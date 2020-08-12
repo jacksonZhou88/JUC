@@ -13,13 +13,12 @@ package com.mashibing.juc.c_020_01_Interview;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class T02_WithVolatile {
 
 	//添加volatile，使t2能够得到通知
-	//volatile List lists = new LinkedList();
+//	volatile List lists = new LinkedList();
 	volatile List lists = Collections.synchronizedList(new LinkedList<>());
 
 	public void add(Object o) {
@@ -37,12 +36,12 @@ public class T02_WithVolatile {
 			for(int i=0; i<10; i++) {
 				c.add(new Object());
 				System.out.println("add " + i);
-				
-				/*try {
-					TimeUnit.SECONDS.sleep(1);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}*/
+//
+//				try {
+//					TimeUnit.SECONDS.sleep(1);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 			}
 		}, "t1").start();
 		

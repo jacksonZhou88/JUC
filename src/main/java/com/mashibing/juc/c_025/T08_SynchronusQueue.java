@@ -15,9 +15,9 @@ public class T08_SynchronusQueue { //容量为0
 			}
 		}).start();
 
-		strs.put("aaa"); //阻塞等待消费者消费
+//		strs.put("aaa"); //阻塞等待消费者消费
 		//strs.put("bbb");
 		//strs.add("aaa");
-		System.out.println(strs.size());
+//		System.out.println(strs.size());
 	}
 }
