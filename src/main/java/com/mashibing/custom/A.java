@@ -11,4 +11,8 @@ public class A {
     public B getB(){
         return b;
     }
+
+    public static void main(String[] args) {
+        System.out.println("hello".getBytes());
+    }
 }
